@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configuration
-CONFIG_PATH="configs/tiny/OLMo-20M.yaml"
+CONFIG_PATH="configs/official-0425/OLMo2-1B-stage1.yaml"
 NUM_GPUS=1  # Change this based on your setup
 MASTER_PORT=12355
 

@@ -6,6 +6,7 @@ wandb:
   name: ${run_name}
   project: olmo-small
   group: ${run_name}
+  entity: adi-dhulipala
 
 model:
   d_model: 2048
