@@ -5,7 +5,7 @@ dry_run: false
 wandb:
   name: ${run_name}
   project: olmo-tiny
-  entity: adhulipa
+  entity: adi-dhulipala
 
 model:
   d_model: 256
