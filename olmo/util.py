@@ -148,7 +148,19 @@ def setup_logging(log_filter_type: LogFilterType = LogFilterType.rank0_only) -> 
 
     if filter is not None:
         handler.addFilter(filter)  # type: ignore
-    logging.basicConfig(handlers=[handler], level=logging.INFO)
+
+    # Check for PYTHONLOGGING environment variable
+    log_level_env = os.environ.get("PYTHONLOGGING", "INFO").upper()
+    if log_level_env == "DEBUG":
+        log_level = logging.DEBUG
+    elif log_level_env == "WARNING":
+        log_level = logging.WARNING
+    elif log_level_env == "ERROR":
+        log_level = logging.ERROR
+    else:
+        log_level = logging.INFO
+
+    logging.basicConfig(handlers=[handler], level=log_level)
 
     logging.captureWarnings(True)
     logging.getLogger("urllib3").setLevel(logging.ERROR)
